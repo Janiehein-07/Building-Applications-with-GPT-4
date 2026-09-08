@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>AI Blog Content Generator</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<div class="app">
+
+    <!-- ================= SIDEBAR ================= -->
+
+    <aside class="sidebar">
+
+        <div class="logo">
+
+            <div class="logo-icon">
+                ✍️
+            </div>
+
+            <div>
+                <h2>BlogBot</h2>
+                <p>AI Content Generator</p>
+            </div>
+
+        </div>
+
+
+        <button class="new-chat" onclick="newChat()">
+            ＋ New Chat
+        </button>
+
+
+        <div class="sidebar-section">
+
+            <h3>Blog Assistant</h3>
+
+            <div class="feature">
+
+                <span>📝</span>
+
+                <div>
+                    <strong>Blog Generation</strong>
+                    <small>Create complete blogs</small>
+                </div>
+
+            </div>
+
+
+            <div class="feature">
+
+                <span>🎯</span>
+
+                <div>
+                    <strong>Prompt Engineering</strong>
+                    <small>Customize your content</small>
+                </div>
+
+            </div>
+
+
+            <div class="feature">
+
+                <span>✨</span>
+
+                <div>
+                    <strong>Powered by Ollama</strong>
+                    <small>Llama 3.2 locally</small>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="sidebar-bottom">
+
+            <div class="status">
+
+                <span class="status-dot"></span>
+
+                Ollama Connected
+
+            </div>
+
+        </div>
+
+    </aside>
+
+
+
+    <!-- ================= MAIN ================= -->
+
+    <main class="main">
+
+
+        <!-- HEADER -->
+
+        <header class="header">
+
+            <div>
+
+                <h1>
+                    AI Blog Content Generator
+                </h1>
+
+                <p>
+                    Create professional blogs using AI
+                </p>
+
+            </div>
+
+
+            <div class="model">
+
+                <span class="model-dot"></span>
+
+                Llama 3.2
+
+            </div>
+
+        </header>
+
+
+
+        <!-- ================= SETTINGS PANEL ================= -->
+
+        <div class="settings-panel">
+
+            <div class="settings-title">
+
+                <div>
+                    ⚙️
+                    <strong>Blog Settings</strong>
+                </div>
+
+                <span>
+                    Prompt Engineering
+                </span>
+
+            </div>
+
+
+            <div class="settings-grid">
+
+
+                <!-- TOPIC -->
+
+                <div class="setting-group topic-group">
+
+                    <label>
+                        📝 Blog Topic
+                    </label>
+
+                    <input
+                        type="text"
+                        id="topic"
+                        placeholder="e.g. Artificial Intelligence"
+                    >
+
+                </div>
+
+
+
+                <!-- STYLE -->
+
+                <div class="setting-group">
+
+                    <label>
+                        ✍️ Writing Style
+                    </label>
+
+                    <select id="style">
+
+                        <option value="Professional">
+                            Professional
+                        </option>
+
+                        <option value="Casual">
+                            Casual
+                        </option>
+
+                        <option value="Technical">
+                            Technical
+                        </option>
+
+                        <option value="Academic">
+                            Academic
+                        </option>
+
+                        <option value="Creative">
+                            Creative
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+
+                <!-- TONE -->
+
+                <div class="setting-group">
+
+                    <label>
+                        😊 Tone
+                    </label>
+
+                    <select id="tone">
+
+                        <option value="Friendly">
+                            Friendly
+                        </option>
+
+                        <option value="Formal">
+                            Formal
+                        </option>
+
+                        <option value="Informative">
+                            Informative
+                        </option>
+
+                        <option value="Persuasive">
+                            Persuasive
+                        </option>
+
+                        <option value="Engaging">
+                            Engaging
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+
+                <!-- AUDIENCE -->
+
+                <div class="setting-group">
+
+                    <label>
+                        👥 Target Audience
+                    </label>
+
+                    <select id="audience">
+
+                        <option value="Engineering Students">
+                            Engineering Students
+                        </option>
+
+                        <option value="College Students">
+                            College Students
+                        </option>
+
+                        <option value="Professionals">
+                            Professionals
+                        </option>
+
+                        <option value="General Public">
+                            General Public
+                        </option>
+
+                        <option value="School Students">
+                            School Students
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+
+                <!-- WORD COUNT -->
+
+                <div class="setting-group">
+
+                    <label>
+                        🔢 Word Count
+                    </label>
+
+                    <select id="wordCount">
+
+                        <option value="300">
+                            300 words
+                        </option>
+
+                        <option value="500" selected>
+                            500 words
+                        </option>
+
+                        <option value="800">
+                            800 words
+                        </option>
+
+                        <option value="1000">
+                            1000 words
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+
+                <!-- EXTRA INSTRUCTIONS -->
+
+                <div class="setting-group instructions-group">
+
+                    <label>
+                        💡 Additional Instructions
+                    </label>
+
+                    <input
+                        type="text"
+                        id="instructions"
+                        placeholder="e.g. Use simple English and real-world examples"
+                    >
+
+                </div>
+
+            </div>
+
+
+            <!-- GENERATE BUTTON -->
+
+            <button
+                class="generate-button"
+                onclick="generateBlog()"
+            >
+
+                ✨ Generate Blog
+
+            </button>
+
+        </div>
+
+
+
+        <!-- ================= CHAT ================= -->
+
+        <div
+            class="chat-container"
+            id="chatContainer"
+        >
+
+
+            <!-- WELCOME MESSAGE -->
+
+            <div class="message ai-message">
+
+                <div class="avatar ai-avatar">
+                    🤖
+                </div>
+
+
+                <div class="message-content">
+
+                    <div class="message-name">
+                        BlogBot
+                    </div>
+
+
+                    <div class="bubble welcome-bubble">
+
+                        <h2>
+                            👋 Hello!
+                        </h2>
+
+
+                        <p>
+                            I'm your AI Blog Content Generator.
+                            I can help you create professional and
+                            engaging blog content.
+                        </p>
+
+
+                        <p>
+                            Enter your blog requirements above
+                            and click <strong>Generate Blog</strong>.
+                        </p>
+
+
+                        <div class="suggestions">
+
+                            <button
+                                onclick="setTopic('Artificial Intelligence')"
+                            >
+                                🤖 Artificial Intelligence
+                            </button>
+
+
+                            <button
+                                onclick="setTopic('Cyber Security')"
+                            >
+                                🔐 Cyber Security
+                            </button>
+
+
+                            <button
+                                onclick="setTopic('Electric Vehicles')"
+                            >
+                                🚗 Electric Vehicles
+                            </button>
+
+
+                            <button
+                                onclick="setTopic('Climate Change')"
+                            >
+                                🌍 Climate Change
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- ================= TYPING ================= -->
+
+        <div
+            class="typing-container"
+            id="typingContainer"
+        >
+
+            <div class="avatar ai-avatar">
+                🤖
+            </div>
+
+
+            <div class="typing-bubble">
+
+                <span></span>
+                <span></span>
+                <span></span>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- ================= CHAT INPUT ================= -->
+
+        <div class="input-area">
+
+            <div class="input-wrapper">
+
+                <textarea
+                    id="messageInput"
+                    placeholder="Ask BlogBot anything..."
+                    rows="1"
+                    onkeydown="handleKeyDown(event)"
+                ></textarea>
+
+
+                <button
+                    class="send-button"
+                    id="sendButton"
+                    onclick="sendMessage()"
+                >
+                    ➤
+                </button>
+
+            </div>
+
+
+            <div class="input-hint">
+
+                Press <strong>Enter</strong> to send •
+                <strong>Shift + Enter</strong> for a new line
+
+            </div>
+
+        </div>
+
+    </main>
+
+</div>
+
+
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+
+</body>
+
+</html>
