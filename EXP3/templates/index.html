@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Intelligent Email Assistant</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="header">
+        <h1>✉ Intelligent Email Assistant</h1>
+        <p>AI-powered customer email reply generator using Ollama</p>
+    </div>
+
+    <div class="card">
+
+        <h2>Customer Email</h2>
+
+        <form method="POST">
+
+            <label>Customer Name</label>
+            <input type="text"
+                   name="name"
+                   placeholder="Enter customer name"
+                   required>
+
+            <label>Email Subject</label>
+            <input type="text"
+                   name="subject"
+                   placeholder="Enter email subject"
+                   required>
+
+            <label>Customer Email</label>
+            <textarea name="email"
+                      rows="6"
+                      placeholder="Enter customer email"
+                      required></textarea>
+
+            <label>Select Tone</label>
+
+            <select name="tone">
+                <option value="friendly">Friendly</option>
+                <option value="formal">Formal</option>
+                <option value="empathetic">Empathetic</option>
+            </select>
+
+            <button type="submit">
+                Generate Reply
+            </button>
+
+        </form>
+
+    </div>
+
+
+    {% if result %}
+
+    <div class="results">
+
+        <div class="result-card">
+
+            <h2>🎯 Detected Intent</h2>
+
+            <div class="intent">
+                {{ result.intent }}
+            </div>
+
+        </div>
+
+
+        <div class="result-card">
+
+            <h2>🔎 Similar Previous Email</h2>
+
+            <p>
+                <strong>Previous Email:</strong>
+            </p>
+
+            <div class="text-box">
+                {{ result.previous_email }}
+            </div>
+
+            <p>
+                <strong>Previous Reply:</strong>
+            </p>
+
+            <div class="text-box">
+                {{ result.previous_reply }}
+            </div>
+
+            <p>
+                <strong>Similarity Score:</strong>
+                {{ result.similarity }}
+            </p>
+
+        </div>
+
+
+        <div class="result-card">
+
+            <h2>🤖 Generated Reply</h2>
+
+            <div class="reply-box">
+                {{ result.reply }}
+            </div>
+
+        </div>
+
+
+        <div class="result-card">
+
+            <h2>📝 Conversation Summary</h2>
+
+            <div class="summary-box">
+                {{ result.summary }}
+            </div>
+
+        </div>
+
+    </div>
+
+    {% endif %}
+
+</div>
+
+</body>
+</html>
