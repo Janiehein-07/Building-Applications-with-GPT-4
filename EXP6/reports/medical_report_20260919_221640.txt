@@ -1,0 +1,103 @@
+
+AI-POWERED MEDICAL SYMPTOM ASSISTANT
+====================================
+
+Generated:
+19-09-2026 22:16:40
+
+PATIENT INFORMATION
+-------------------
+
+Age: 22
+Sex: Female
+
+Symptoms:
+cough,headache
+
+Duration:
+5 days
+
+Severity:
+Severe
+
+Medical History:
+asthma
+
+Medication:
+none
+
+Allergies:
+dust
+
+Additional Information:
+headache
+
+
+ANALYSIS
+--------
+
+
+COMPLETE STRUCTURED ANALYSIS
+
+--------------------------------------------------
+
+EXTRACTED SYMPTOMS
+
+• cough
+• headache
+
+
+--------------------------------------------------
+
+AI ANALYSIS
+
+POSSIBLE CONDITIONS
+
+1. Common Cold: A severe cough and headache can be symptoms of a common cold, especially in someone with asthma.
+2. Sinus Infection: The combination of cough and headache, particularly if accompanied by nasal congestion or facial pain, may indicate a sinus infection.
+3. Allergic Reaction: Given the patient's allergy to dust, an allergic reaction could be a possible explanation for the severe cough and headache.
+
+WHY THESE WERE CONSIDERED
+
+These possibilities were considered because they are common conditions that can cause similar symptoms, especially in someone with asthma. A common cold and sinus infection can both cause cough and headache, and an allergic reaction can also lead to these symptoms, especially if the patient has a known allergy.
+
+FOLLOW-UP QUESTIONS
+
+- Has the patient experienced any nasal congestion, facial pain, or difficulty breathing?
+- Has the patient's cough produced any mucus or phlegm?
+- Has the patient's headache worsened or changed in nature over the past 5 days?
+
+MEDICAL ATTENTION GUIDANCE
+
+If symptoms worsen, such as if the cough produces yellow or green mucus, or if the headache is severe and persistent, the patient should contact a healthcare professional immediately.
+
+GENERAL SELF-CARE
+
+- The patient can try to stay hydrated by drinking plenty of fluids, such as water, tea, or soup.
+- Over-the-counter pain relievers, such as acetaminophen or ibuprofen, may help alleviate headache symptoms. However, it's essential to follow the recommended dosage and consult with a healthcare professional before taking any medication.
+
+DISCLAIMER
+
+This response provides general informational content only. It is not a medical diagnosis or a substitute for professional medical advice.
+
+--------------------------------------------------
+
+DISCLAIMER
+
+This AI-powered analysis is provided for general
+informational purposes only.
+
+It is NOT a medical diagnosis.
+
+Please consult a qualified healthcare professional
+for diagnosis, treatment, or medical advice.
+
+--------------------------------------------------
+
+
+
+DISCLAIMER
+----------
+
+This report is for informational purposes only.
+It is not a medical diagnosis.

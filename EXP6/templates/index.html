@@ -1,0 +1,358 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>AI Medical Symptom Assistant</title>
+
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='style.css') }}"
+    />
+  </head>
+
+  <body>
+    <!-- =====================================================
+     HOME SCREEN
+====================================================== -->
+
+    <header class="header">
+      <div class="header-content">
+        <div>
+          <h1>AI Medical Symptom Assistant</h1>
+
+          <p>AI-powered general health information assistant</p>
+        </div>
+
+        <div class="status">● Ollama Connected</div>
+      </div>
+    </header>
+
+    <!-- =====================================================
+     MAIN CONTAINER
+====================================================== -->
+
+    <main class="container">
+      <!-- =====================================================
+     INFORMATION BANNER
+====================================================== -->
+
+      <section class="info-card">
+        <h2>About the Assistant</h2>
+
+        <p>
+          This system collects patient information and symptoms, analyzes the
+          provided context using a local AI model, and generates a structured
+          health-information response.
+        </p>
+
+        <p class="warning">
+          This system does not provide a confirmed medical diagnosis.
+        </p>
+      </section>
+
+      <!-- =====================================================
+     PROGRESS FLOW
+====================================================== -->
+
+      <section class="flow-card">
+        <h2>Analysis Workflow</h2>
+
+        <div class="workflow">
+          <div class="flow-step">
+            <span>1</span>
+            <p>Patient<br />Information</p>
+          </div>
+
+          <div class="arrow">→</div>
+
+          <div class="flow-step">
+            <span>2</span>
+            <p>Symptom<br />Input</p>
+          </div>
+
+          <div class="arrow">→</div>
+
+          <div class="flow-step">
+            <span>3</span>
+            <p>Context<br />Analysis</p>
+          </div>
+
+          <div class="arrow">→</div>
+
+          <div class="flow-step">
+            <span>4</span>
+            <p>AI<br />Analysis</p>
+          </div>
+
+          <div class="arrow">→</div>
+
+          <div class="flow-step">
+            <span>5</span>
+            <p>Structured<br />Report</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- =====================================================
+     PATIENT INFORMATION
+====================================================== -->
+
+      <section class="form-card">
+        <div class="section-title">
+          <span class="number">01</span>
+
+          <div>
+            <h2>Patient Information</h2>
+
+            <p>Enter basic patient information.</p>
+          </div>
+        </div>
+
+        <div class="form-grid">
+          <div class="form-group">
+            <label for="age"> Age * </label>
+
+            <input
+              type="number"
+              id="age"
+              min="1"
+              max="120"
+              placeholder="Enter age"
+              required
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="sex"> Sex </label>
+
+            <select id="sex">
+              <option value="">Select</option>
+
+              <option value="Male">Male</option>
+
+              <option value="Female">Female</option>
+
+              <option value="Other">Other</option>
+
+              <option value="Prefer not to say">Prefer not to say</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-grid">
+          <div class="form-group">
+            <label for="medical_history"> Medical History </label>
+
+            <textarea
+              id="medical_history"
+              placeholder="Example: asthma, diabetes, none"
+            >
+            </textarea>
+          </div>
+
+          <div class="form-group">
+            <label for="medication"> Current Medication </label>
+
+            <textarea
+              id="medication"
+              placeholder="Enter current medicines or None"
+            >
+            </textarea>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="allergies"> Allergies </label>
+
+          <textarea id="allergies" placeholder="Enter known allergies or None">
+          </textarea>
+        </div>
+      </section>
+
+      <!-- =====================================================
+     SYMPTOM INPUT
+====================================================== -->
+
+      <section class="form-card">
+        <div class="section-title">
+          <span class="number">02</span>
+
+          <div>
+            <h2>Symptom Input</h2>
+
+            <p>Describe the symptoms and their characteristics.</p>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="symptoms"> Symptoms * </label>
+
+          <textarea
+            id="symptoms"
+            class="large-textarea"
+            placeholder="Example: fever, cough, headache, sore throat"
+            required
+          ></textarea>
+
+          <small> You can enter multiple symptoms separated by commas. </small>
+        </div>
+
+        <div class="form-grid">
+          <div class="form-group">
+            <label for="duration"> Duration * </label>
+
+            <input
+              type="text"
+              id="duration"
+              placeholder="Example: 2 days"
+              required
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="severity"> Severity </label>
+
+            <select id="severity">
+              <option value="Mild">Mild</option>
+
+              <option value="Moderate">Moderate</option>
+
+              <option value="Severe">Severe</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="additional_info"> Additional Information </label>
+
+          <textarea
+            id="additional_info"
+            placeholder="Enter any other relevant information"
+          >
+          </textarea>
+        </div>
+
+        <button id="analyzeButton" class="analyze-button">
+          Analyze Symptoms
+        </button>
+      </section>
+
+      <!-- =====================================================
+     EXTRACTED SYMPTOMS
+====================================================== -->
+
+      <section id="extractedSection" class="result-card hidden">
+        <div class="result-title">
+          <span class="result-icon"> ✓ </span>
+
+          <div>
+            <h2>Extracted Symptoms</h2>
+
+            <p>Symptoms identified from your input.</p>
+          </div>
+        </div>
+
+        <div id="extractedSymptoms" class="symptom-tags"></div>
+      </section>
+
+      <!-- =====================================================
+     CONTEXT ANALYSIS
+====================================================== -->
+
+      <section id="contextSection" class="result-card hidden">
+        <div class="result-title">
+          <span class="result-icon"> 02 </span>
+
+          <div>
+            <h2>Context Analysis</h2>
+
+            <p>Patient information is being considered.</p>
+          </div>
+        </div>
+
+        <div id="contextContent"></div>
+      </section>
+
+      <!-- =====================================================
+     PROMPT GENERATION
+====================================================== -->
+
+      <section id="promptSection" class="result-card hidden">
+        <div class="result-title">
+          <span class="result-icon"> 03 </span>
+
+          <div>
+            <h2>Prompt Generation</h2>
+
+            <p>Patient context is converted into an AI prompt.</p>
+          </div>
+        </div>
+
+        <div class="processing">Preparing AI analysis...</div>
+      </section>
+
+      <!-- =====================================================
+     AI RESPONSE
+====================================================== -->
+
+      <section id="aiSection" class="result-card hidden">
+        <div class="result-title">
+          <span class="result-icon"> AI </span>
+
+          <div>
+            <h2>Ollama AI Response</h2>
+
+            <p>The local AI model is analyzing the information.</p>
+          </div>
+        </div>
+
+        <div id="aiContent" class="ai-response"></div>
+      </section>
+
+      <!-- =====================================================
+     COMPLETE STRUCTURED ANALYSIS
+====================================================== -->
+
+      <section id="resultSection" class="result-card hidden">
+        <div class="result-title">
+          <span class="result-icon"> ✓ </span>
+
+          <div>
+            <h2>Complete Structured Analysis</h2>
+
+            <p>Generated health-information report.</p>
+          </div>
+        </div>
+
+        <div id="result" class="final-result"></div>
+      </section>
+
+      <!-- =====================================================
+     SAVED REPORT
+====================================================== -->
+
+      <section id="savedSection" class="saved-card hidden">
+        <h2>Saved Report</h2>
+
+        <p>Your analysis has been saved successfully.</p>
+
+        <div id="savedReport"></div>
+      </section>
+    </main>
+
+    <!-- =====================================================
+     FOOTER
+====================================================== -->
+
+    <footer>
+      <p>AI Medical Symptom Assistant</p>
+
+      <p>For educational purposes only • Not a medical diagnosis</p>
+    </footer>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+  </body>
+</html>

@@ -1,0 +1,104 @@
+
+AI-POWERED MEDICAL SYMPTOM ASSISTANT
+====================================
+
+Generated:
+12-09-2026 10:39:45
+
+PATIENT INFORMATION
+-------------------
+
+Age: 20
+Sex: Male
+
+Symptoms:
+fever
+
+Duration:
+2 days
+
+Severity:
+Mild
+
+Medical History:
+none
+
+Medication:
+none
+
+Allergies:
+none
+
+Additional Information:
+none
+
+
+ANALYSIS
+--------
+
+
+COMPLETE STRUCTURED ANALYSIS
+
+--------------------------------------------------
+
+EXTRACTED SYMPTOMS
+
+• fever
+
+
+--------------------------------------------------
+
+AI ANALYSIS
+
+POSSIBLE CONDITIONS
+
+1. Viral Upper Respiratory Tract Infection (URTI)
+2. Mild Bacterial Infection (e.g., strep throat)
+3. Allergic Rhinitis
+
+WHY THESE WERE CONSIDERED
+
+These possibilities may be associated with the symptoms of fever due to the common viral and bacterial infections that can cause fever in young adults. Allergic rhinitis can also cause fever, especially if the individual has a severe allergic reaction.
+
+FOLLOW-UP QUESTIONS
+
+* Has the patient experienced any sore throat, runny nose, or congestion?
+* Has the patient been in contact with anyone who has a similar illness?
+* Has the patient noticed any other symptoms such as headache, muscle aches, or fatigue?
+
+MEDICAL ATTENTION GUIDANCE
+
+If the patient's fever is accompanied by difficulty breathing, chest pain, or severe headache, they should contact a healthcare professional immediately.
+
+For mild symptoms, the patient should contact a healthcare professional if the fever persists or worsens over time, or if they experience any concerning symptoms such as severe headache, stiff neck, or confusion.
+
+GENERAL SELF-CARE
+
+* Encourage the patient to stay hydrated by drinking plenty of fluids, such as water, clear broths, or electrolyte-rich beverages.
+* Suggest that the patient rest and avoid strenuous activities to help their body recover.
+
+DISCLAIMER
+
+This response provides general informational content only. It is not a medical diagnosis or a substitute for professional medical advice.
+
+--------------------------------------------------
+
+DISCLAIMER
+
+This AI-powered analysis is provided for general
+informational purposes only.
+
+It is NOT a medical diagnosis.
+
+Please consult a qualified healthcare professional
+for diagnosis, treatment, or medical advice.
+
+--------------------------------------------------
+
+
+
+DISCLAIMER
+----------
+
+This report is for informational purposes only.
+It is not a medical diagnosis.
