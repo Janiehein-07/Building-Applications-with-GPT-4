@@ -1,0 +1,54 @@
+**REPORT**
+
+**1. DOCUMENT TYPE**
+Service Agreement
+
+**2. SUMMARY**
+This Service Agreement is between ABC Technologies Pvt. Ltd. (service provider) and XYZ Solutions Pvt. Ltd. (client) to provide software development and maintenance services. The agreement outlines the obligations, payment terms, and duration of the services.
+
+**3. PARTIES**
+- ABC Technologies Pvt. Ltd. (service provider)
+- XYZ Solutions Pvt. Ltd. (client)
+
+**4. OBLIGATIONS**
+- ABC Technologies: Develop software according to client requirements, provide technical support and maintenance.
+- XYZ Solutions: Provide required project information and cooperate with the service provider.
+
+**5. PAYMENT TERMS**
+- Total amount: Rs. 2,00,000
+- Payment: Two installments
+- Not specified: Due dates, penalties
+
+**6. DURATION AND IMPORTANT DATES**
+- Start date: 1 January 2026
+- End date: 31 December 2026
+
+**7. KEY CLAUSES**
+- Confidentiality: Maintain confidentiality of business and technical information.
+- Termination: Either party can terminate with 30 days written notice.
+- Not specified: Liability, dispute resolution, intellectual property
+
+**8. RISK ANALYSIS**
+1. **Issue:** Lack of clear payment terms.
+   **Why it matters:** Unclear due dates and penalties may lead to disputes.
+   **Potential impact:** Delays or disputes may affect the project timeline and costs.
+2. **Issue:** Insufficient information on liability.
+   **Why it matters:** Unclear liability may lead to disputes or legal issues.
+   **Potential impact:** Financial losses or legal consequences for either party.
+3. **Issue:** No clear dispute resolution process.
+   **Why it matters:** Unclear dispute resolution may lead to prolonged conflicts.
+   **Potential impact:** Project delays or financial losses.
+
+**9. MISSING OR UNCLEAR TERMS**
+- Liability
+- Dispute resolution
+- Intellectual property
+- Payment due dates and penalties
+
+**10. RECOMMENDATIONS**
+1. Clearly outline payment terms, including due dates and penalties.
+2. Include a dispute resolution process to avoid prolonged conflicts.
+3. Specify the scope of intellectual property ownership.
+
+**11. DISCLAIMER**
+This report is an AI-generated informational review and not legal advice.

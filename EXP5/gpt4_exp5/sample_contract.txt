@@ -1,0 +1,31 @@
+SERVICE AGREEMENT
+
+This Service Agreement is made between ABC Technologies Pvt. Ltd. and XYZ Solutions Pvt. Ltd.
+
+PARTIES:
+ABC Technologies Pvt. Ltd. is the service provider.
+XYZ Solutions Pvt. Ltd. is the client.
+
+PURPOSE:
+The purpose of this agreement is to provide software development and maintenance services to the client.
+
+OBLIGATIONS:
+ABC Technologies shall develop the software according to the requirements provided by XYZ Solutions.
+ABC Technologies shall provide technical support and maintenance.
+XYZ Solutions shall provide the required project information and cooperate with the service provider.
+
+PAYMENT TERMS:
+XYZ Solutions shall pay a total amount of Rs. 2,00,000 for the services.
+The payment shall be made in two installments.
+
+DURATION:
+This agreement shall remain valid for a period of 12 months from 1 January 2026.
+
+CONFIDENTIALITY:
+Both parties shall maintain the confidentiality of business information, technical information and other confidential materials shared during the agreement.
+
+TERMINATION:
+Either party may terminate this agreement by providing 30 days written notice to the other party.
+
+IMPORTANT DATE:
+The agreement begins on 1 January 2026 and ends on 31 December 2026.

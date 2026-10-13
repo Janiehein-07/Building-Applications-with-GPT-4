@@ -1,0 +1,170 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LegalAI | Document Analyzer</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+    <script src="{{ url_for('static', filename='script.js') }}" defer></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+          rel="stylesheet">
+</head>
+<body>
+
+<div class="app-shell">
+
+    <aside class="sidebar">
+        <a href="/" class="brand">
+            <span class="brand-icon">⚖</span>
+            <span>Legal<span class="brand-light">AI</span></span>
+        </a>
+
+        <div class="nav-label">WORKSPACE</div>
+        <a href="/" class="nav-link active">
+            <span>▦</span> Document Analyzer
+        </a>
+
+        <div class="sidebar-note">
+            <span class="status-dot"></span>
+            <strong>AI Engine</strong>
+            <p>Ready to analyze your document</p>
+        </div>
+
+        <div class="sidebar-footer">
+            <div class="footer-icon">CS</div>
+            <div>
+                <strong>Academic Project</strong>
+                <p>24CS2506 · Experiment 5</p>
+            </div>
+        </div>
+    </aside>
+
+    <main class="main-content">
+
+        <header class="topbar">
+            <div>
+                <div class="breadcrumb">Workspace / <span>Analyzer</span></div>
+                <p class="topbar-subtitle">Intelligent legal document review</p>
+            </div>
+            <div class="secure-badge">
+                <span>✓</span> Document Analysis
+            </div>
+        </header>
+
+        <section class="welcome">
+            <div>
+                <div class="eyebrow">LEGAL DOCUMENT INTELLIGENCE</div>
+                <h1>Understand your legal documents.</h1>
+                <p>Upload a document or paste legal text to generate a structured AI-powered analysis.</p>
+            </div>
+            <div class="welcome-icon">⚖</div>
+        </section>
+
+        <section class="content-grid">
+
+            <div class="card upload-card">
+                <div class="section-heading">
+                    <div class="heading-icon">↑</div>
+                    <div>
+                        <h2>Analyze a document</h2>
+                        <p>Choose a file or enter your legal text below.</p>
+                    </div>
+                </div>
+
+                <form action="/analyze" method="POST"
+                      enctype="multipart/form-data" id="analyzeForm">
+
+                    <label for="file">Upload TXT document</label>
+
+                    <div class="upload-area">
+                        <div class="upload-icon">⇧</div>
+                        <p class="upload-title">Choose a document to upload</p>
+                        <p class="upload-description">TXT files only · Select a file from your device</p>
+                        <input type="file" id="file" name="file" accept=".txt">
+                    </div>
+
+                    <div class="divider"><span>OR ENTER TEXT</span></div>
+
+                    <label for="document">Legal document content</label>
+                    <textarea id="document" name="document" rows="9"
+                        placeholder="Paste your contract, agreement, terms and conditions, or other legal text here..."></textarea>
+
+                    <div class="form-hint">
+                        <span>ⓘ</span>
+                        Enter text or upload a TXT file.
+                    </div>
+
+                    <button type="submit" id="analyzeButton" class="primary-button">
+                        <span>✦</span> Analyze Document <span>→</span>
+                    </button>
+                </form>
+
+                {% if error %}
+                <div class="error-message">{{ error }}</div>
+                {% endif %}
+            </div>
+
+            <div class="info-column">
+                <div class="card info-card">
+                    <div class="info-icon purple">✦</div>
+                    <h3>AI-powered insights</h3>
+                    <p>Organize important information from legal documents into a readable report.</p>
+                </div>
+
+                <div class="card info-card">
+                    <div class="info-icon blue">▤</div>
+                    <h3>Structured analysis</h3>
+                    <p>Review summaries, parties, obligations, payment terms, dates and clauses.</p>
+                </div>
+
+                <div class="privacy-note">
+                    <span>ⓘ</span>
+                    <div>
+                        <strong>Review AI-generated results</strong>
+                        <p>AI analysis may miss important legal details. Verify findings with a qualified legal professional.</p>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+        {% if analysis %}
+        <section class="card result-card" id="analysisResult">
+            <div class="result-header">
+                <div class="section-heading">
+                    <div class="heading-icon result-icon">✓</div>
+                    <div>
+                        <h2>Analysis report</h2>
+                        <p>Your document has been processed.</p>
+                    </div>
+                </div>
+                <a href="/download" class="download-button">
+                    ↓ Download Report
+                </a>
+            </div>
+
+            <div class="analysis">
+                <pre>{{ analysis }}</pre>
+            </div>
+
+            <div class="report-disclaimer">
+                AI-generated analysis is for informational purposes only and is not legal advice.
+            </div>
+        </section>
+        {% endif %}
+
+        <footer class="page-footer">
+            <span>LegalAI · Automated Legal Document Analyzer</span>
+            <span>24CS2506 · Building Applications using GPT-4</span>
+        </footer>
+
+    </main>
+</div>
+
+</body>
+</html>
